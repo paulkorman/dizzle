@@ -19,7 +19,6 @@ const styles = theme =>  ({
         paddingTop: 55,
         paddingBottom: 44
     },
-
 });
 
 class GroupBuyList extends Component {

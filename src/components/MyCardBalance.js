@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import classNames from 'classnames';
 import Card, { CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
@@ -89,7 +90,7 @@ const styles = theme => ({
     label: {
         display: 'inline-block',
         verticalAlign: 'top',
-        lineHeight: 1.25,
+        lineHeight: 1.23,
         fontSize: 9,
         fontWeight: 'bold',
         textTransform: 'uppercase',
@@ -99,12 +100,15 @@ const styles = theme => ({
     wrapprice: {
         marginBottom: 20
     },
+    mt: {
+        marginTop: 5,
+    },
     groupbuyowner: {
         color: '#fff',
         textTransform: 'uppercase',
         fontSize: 9,
         fontWeight: 'bold',
-        lineHeight: 1.25,
+        lineHeight: 1.23,
         verticalAlign: 'top',
     },
     wrapbutton: {
@@ -159,7 +163,7 @@ function MyCardBalance(props) {
                     <p className={classes.wrapprice}>
                         <span className={classes.wrapgiftcard}>
                             <span className={classes.dollars}>{giftcard}</span>
-                            <span className={classes.label}>gift <br/>card</span>
+                            <span className={classNames(classes.label, classes.mt)}>gift <br/>card</span>
                         </span>
 
                     </p>

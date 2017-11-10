@@ -74,6 +74,13 @@ const styles = theme => ({
         fontSize: 11,
         opacity: 0.3,
         textTransform: 'uppercase',
+        '& a': {
+            color: '#fff',
+            fontWeight: 500,
+            fontSize: 11,
+            textTransform: 'uppercase',
+            textDecoration: 'underline',
+        }
     },
     status: {
         display: 'inline-block',
@@ -145,7 +152,7 @@ class MyAccount extends Component {
                             </div>
                             <div className={this.props.classes.row}>
                                 <div className={this.props.classes.param}>your redeem code</div>
-                                <div className={this.props.classes.value} style={{letterSpacing: 2}}>#3552222511112</div>
+                                <div className={this.props.classes.value} style={{letterSpacing: 2}}><a href="#qr">#3552222511112</a></div>
                             </div>
                         </div>
                         <div style={{textAlign: 'right'}}>

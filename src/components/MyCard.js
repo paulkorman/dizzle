@@ -90,22 +90,25 @@ const styles = theme => ({
     label: {
         display: 'inline-block',
         verticalAlign: 'top',
-        lineHeight: 1.25,
+        lineHeight: 1.23,
         fontSize: 9,
         fontWeight: 'bold',
         textTransform: 'uppercase',
         color: '#fff',
-        opacity: 0.3
+        opacity: 0.3,
     },
     wrapprice: {
-        marginBottom: 20
+        marginBottom: 20,
+    },
+    mt: {
+        marginTop: 5,
     },
     groupbuyowner: {
         color: '#fff',
         textTransform: 'uppercase',
         fontSize: 9,
         fontWeight: 'bold',
-        lineHeight: 1.25,
+        lineHeight: 1.23,
         verticalAlign: 'top',
     },
     wrapbutton: {
@@ -166,20 +169,20 @@ function MyCard(props) {
                 </div>
                 <CardContent className={classes.cardcontent}>
 
-                        <p className={classes.wrapprice}>
-                            <span className={classes.wrapgiftcard}>
-                                <span className={classes.dollars}>{giftcard}</span>
-                                <span className={classes.label}>gift <br/>card</span>
-                            </span>
-                            <span>
-                                <span className={classes.dollars}>{sell}</span>
-                                <span className={classes.label}>sell</span>
-                            </span>
-                        </p>
-                        <div>
-                            <span className={classes.label}>group Buy Owner / </span>
-                            <span className={classes.groupbuyowner}> {groupbuyowner}</span>
-                        </div>
+                    <p className={classes.wrapprice}>
+                        <span className={classes.wrapgiftcard}>
+                            <span className={classes.dollars}>{giftcard}</span>
+                            <span className={classNames(classes.label, classes.mt)}>gift <br/>card</span>
+                        </span>
+                        <span>
+                            <span className={classes.dollars}>{sell}</span>
+                            <span className={classNames(classes.label, classes.mt)}>sell</span>
+                        </span>
+                    </p>
+                    <div>
+                        <span className={classes.label}>group Buy Owner / </span>
+                        <span className={classes.groupbuyowner}> {groupbuyowner}</span>
+                    </div>
 
                 </CardContent>
                 <div className={classes.wrapbutton}>

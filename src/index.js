@@ -11,7 +11,7 @@ import BalanceList from './pages/balancelist';
 import Starbucks from './pages/starbucks';
 import MyAccount from './pages/myaccount';
 import EditProfile from './pages/editprofile';
-import MuiThemeProviderWrapper from 'material-ui/styles/MuiThemeProvider';
+import QRqode from './pages/qr';
 
 import { HashRouter,Route} from 'react-router-dom';
 
@@ -37,6 +37,7 @@ export default class Index extends React.Component {
                         <Route exact path="/starbucks" component={Starbucks}></Route>
                         <Route exact path="/myaccount" component={MyAccount}></Route>
                         <Route exact path="/editprofile" component={EditProfile}></Route>
+                        <Route exact path="/qr" component={QRqode}></Route>
                     </div>
                 </HashRouter>
 

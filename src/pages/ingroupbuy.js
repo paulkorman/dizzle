@@ -21,11 +21,20 @@ import patternVert from '../img/pattern-v.png';
 
 let diamAvatar = 80;
 
+let width=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+);
+
 const styles = theme =>  ({
     root: {
         minHeight: 'inherit',
         paddingTop: 57,
         paddingBottom: 44,
+        height: (width>320)?scrollHeight:'100%'
     },
     bgimg: {
         backgroundImage: 'url(' + Background + ')',
@@ -90,7 +99,7 @@ const styles = theme =>  ({
         backgroundColor: '#887650',
         backgroundImage: 'url(' + patternVert + ')',
         backgroundSize: '55px auto',
-        backgroundRepeatX: 'no-repeat',
+        backgroundRepeat: 'no-repeat',
         padding: '26px 18px 34px',
         textAlign: 'center',
         marginBottom: 30,
