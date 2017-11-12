@@ -6,18 +6,28 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from '../components/withRoot';
 import MyAppBar from '../components/MyAppBar';
 
+
 import MyCardBalance from '../components/MyCardBalance'
 
 import Avatar1 from '../img/avatar-1.jpg';
 import Avatar2 from '../img/avatar-2.jpg';
 import Avatar3 from '../img/avatar-3.jpg';
 
+let width=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+);
+
 
 const styles = theme =>  ({
     root: {
         minHeight: 'inherit',
         paddingTop: 55,
-        paddingBottom: 44
+        paddingBottom: 44,
+        height: (width>320)?scrollHeight:'100%',
     },
 });
 

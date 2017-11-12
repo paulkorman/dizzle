@@ -7,6 +7,7 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from '../components/withRoot';
 import TextField from 'material-ui/TextField';
 import Grid from 'material-ui/Grid';
+import Snackbar from 'material-ui/Snackbar';
 
 import MyLinkStyled from '../components/MyLink';
 import HeaderLineStyled from '../components/HeaderLineStyled';
@@ -23,8 +24,6 @@ let h = Math.max(
     document.body.offsetHeight, document.documentElement.offsetHeight,
     document.body.clientHeight, document.documentElement.clientHeight
 )
-
-
 
 const styles = theme =>  ({
   root: {
@@ -158,6 +157,17 @@ const styles = theme =>  ({
     '&:after': {
       backgroundColor: '#d9d8d6',
     }
+  },
+  message: {
+
+    '& div': {
+      width: (w>320)?'414px':'auto'
+    }
+  },
+  error: {
+   '& input': {
+     border: '2px solid red'
+   }
   }
 });
 
@@ -166,22 +176,9 @@ class Login extends Component {
     open: false,
   };
 
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
-
-
 
   render() {
-
+    const { vertical, horizontal, open } = this.state;
     return (
       <div className={this.props.classes.root}>
         <div className={this.props.classes.wrapper}>
@@ -191,6 +188,7 @@ class Login extends Component {
               <div className={this.props.classes.title}>DRIZZLE</div>
               <div className={this.props.classes.subtitle}>Buy gift card with friends and saving</div>
               <TextField
+                  className={this.props.classes.error}
                   placeholder="Your Email"
                   fullWidth={true}
                   InputProps={{
@@ -234,6 +232,16 @@ class Login extends Component {
             </div>
           </div>
         </div>
+        <Snackbar
+            className={this.props.classes.message}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            open={true}
+            onRequestClose={this.handleRequestClose}
+            SnackbarContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+            message={<span id="message-id">Error</span>}
+        />
       </div>
     );
   }
