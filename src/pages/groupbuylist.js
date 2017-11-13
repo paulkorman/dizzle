@@ -23,9 +23,14 @@ let scrollHeight = Math.max(
 const styles = theme =>  ({
     root: {
         minHeight: 'inherit',
-        paddingTop: 55,
-        paddingBottom: 44,
-        height: (width>320)?'auto':'100%'
+        //paddingTop: 55,
+        //paddingBottom: 44,
+        //height: (width>320)?'auto':'100%'
+        padding: '100px 15px 44px',
+        minHeight: scrollHeight,
+        '&>div:last-child div': {
+            marginBottom: 0
+        }
     },
 
 });
