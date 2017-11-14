@@ -188,7 +188,6 @@ class Login extends Component {
               <div className={this.props.classes.title}>DRIZZLE</div>
               <div className={this.props.classes.subtitle}>Buy gift card with friends and saving</div>
               <TextField
-                  className={this.props.classes.error}
                   placeholder="Your Email"
                   fullWidth={true}
                   InputProps={{
