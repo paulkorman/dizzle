@@ -15,12 +15,13 @@ const styles = theme => ({
       background: theme.palette.background.default,
       WebkitFontSmoothing: 'antialiased', // Antialiasing.
       MozOsxFontSmoothing: 'grayscale', // Antialiasing.
-      height: '100%',
+      minHeight: '100vh',
       fontFamily: 'Quicksand, sans-serif',
     },
     body: {
       backgroundColor: '#f2f2f2',
       maxWidth: 414,
+      minHeight: '100vh',
       margin: '0 auto',
       position: 'relative'
     },

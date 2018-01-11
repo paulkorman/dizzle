@@ -16,13 +16,10 @@ import facebookIco from '../img/facebook.svg';
 import twitterIco from '../img/twitter.svg';
 
 
-let w=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-let h = Math.max(
-    document.body.scrollHeight, document.documentElement.scrollHeight,
-    document.body.offsetHeight, document.documentElement.offsetHeight,
-    document.body.clientHeight, document.documentElement.clientHeight
-)
+const bodyW = 414;
+let windowH = window.innerHeight;
+let windowW = window.innerWidth;
+let k = windowH / bodyW;
 
 
 const styles = theme =>  ({
@@ -36,14 +33,12 @@ const styles = theme =>  ({
     height: '100%',
   },
   wrap: {
-    minHeight: '100%',
-    minWidth: '100%',
     backgroundColor: '#887650',
     backgroundImage: 'url(' + Background + ')',
-    backgroundPosition: '50% -58px',
+    backgroundPosition: '50% 0',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'auto 110%',
-    height: (w>320)? h:'100%',
+    backgroundSize: 'cover',
+    minHeight: '100vh'
 
   },
   wrapcontent: {

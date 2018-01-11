@@ -22,11 +22,11 @@ export default class Index extends React.Component {
 
     render(){
         return (
-            <div style={{minHeight: '100%', height: '100%'}}>
+            <div>
 
 
                 <HashRouter>
-                    <div style={{minHeight: '100%', height: '100%'}}>
+                    <div>
                         <Route exact path="/" component={Login}></Route>
                         <Route exact path="/login" component={Login}></Route>
                         <Route exact path="/signup" component={Signup}></Route>

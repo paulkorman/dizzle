@@ -8,6 +8,10 @@ import classNames from 'classnames';
 import Card, { CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Avatar from 'material-ui/Avatar';
+
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import "react-day-picker/lib/style.css";
+
 import UploadAva from '../img/upload-ava.png';
 
 
@@ -25,9 +29,11 @@ let scrollHeight = Math.max(
 const styles = theme => ({
     root: {
         minHeight: 'inherit',
-        paddingTop: 55,
-        paddingBottom: 44,
-        height: (width>320)?scrollHeight:'100%'
+        padding: '55px 0 44px',
+        minHeight: scrollHeight,
+        '&>div:last-child div': {
+            marginBottom: 0
+        }
     },
     card: {
         borderRadius: 6,
@@ -159,6 +165,50 @@ const styles = theme => ({
         opacity: 0,
         zIndex: 100
     },
+    date: {
+        '& label': {
+            fontSize: 11,
+            color: '#fff',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+        }
+    },
+    WrapInputDate: {
+        marginTop: 7,
+        marginBottom: 20,
+        '& .DayPickerInput-Overlay': {
+            left: 0,
+            right: 'auto',
+            '& input': {
+                width: '100%'
+            }
+        },
+        '& .DayPickerInput': {
+            width: '100%',
+            position: 'relative',
+            zIndex: 2,
+            '& input': {
+                width: '100%',
+                background: '#fff',
+                border: '1px solid #fff',
+                borderRadius: 5,
+                padding: '15px 10px',
+                boxSizing: 'border-box',
+                cursor: 'pointer',
+                color: 'rgba(136,118,80,0.7)',
+                fontSize: 11,
+                '&::-webkit-input-placeholder':{
+                    color: 'rgba(136,118,80,0.7)',
+                    //opacity: 0.5,
+                    //fontSize: 11,
+                    fontWeight: 'normal'
+                },
+                //'&:focus':{
+                //    borderColor: '#a99771 !important',
+                //}
+            },
+        }
+    },
 
 });
 
@@ -200,25 +250,11 @@ class EditProfile extends Component {
                                     }}
                                 />
                             </div>
-                            <div className={this.props.classes.row}>
-                                <TextField
-                                    id="date"
-                                    label="date of birth"
-                                    type="date"
-                                    defaultValue="1960-11-10"
-                                    fullWidth={true}
-                                    InputProps={{
-                                      disableUnderline: true,
-                                      classes: {
-                                        root: this.props.classes.textFieldRoot,
-                                        input: this.props.classes.textFieldInput,
-                                      },
-                                    }}
-                                    InputLabelProps={{
-                                      shrink: true,
-                                      className: this.props.classes.textFieldFormLabel,
-                                    }}
-                                />
+                            <div className={this.props.classes.date}>
+                                <label>date of birth</label>
+                                <div className={this.props.classes.WrapInputDate}>
+                                    <DayPickerInput placeholder="DD/MM/YYYY" format="DD/MM/YYYY" />
+                                </div>
                             </div>
                             <div className={this.props.classes.row}>
                                 <TextField

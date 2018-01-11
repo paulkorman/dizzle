@@ -34,7 +34,7 @@ const styles = theme =>  ({
         minHeight: 'inherit',
         paddingTop: 57,
         paddingBottom: 44,
-        height: (width>320)?scrollHeight:'100%'
+
     },
     bgimg: {
         backgroundImage: 'url(' + Background + ')',
